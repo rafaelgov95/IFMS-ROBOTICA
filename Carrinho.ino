@@ -86,24 +86,20 @@ void loop() {
 
 String t = "";
   if (Serial3.available()) {
-    t += (char)Serial3.read();
+    t = (char)Serial3.read();
     delay(10);
     Serial.println(t);
     delay(10);
-  if (acao == 'F') { //Iniciar
+  if (t.equals("F")) { //Iniciar
     paraFrente();
-    Serial.println("foi para frente");
-  } else if (acao == 'T') { //Desligar, parar o carro
+  } else if (t.equals( "T")) { //Desligar, parar o carro
     paraTras();
-  } else if (acao == 'D') { //Parar
+  } else if (t.equals("D")) { //Parar
     paraDireita();
-  } else if (acao == 'E') { //Frente
+  } else if (t.equals("E")) { //Frente
     paraEsquerda();
-  } else if (acao == 'P') { //Traz
+  } else if (t.equals("P")) { //Traz
     parar();
   }
 } 
-  if (Serial.available()) {
-    Serial3.write(Serial.read());
-  }
 }
