@@ -1,5 +1,7 @@
 /*
-  IFMS-CAR
+    Autor: Rafael Viana
+
+    Evento: Semana da Ciência e Tecnologia - IFMS 2017
 */
 
 int ENA = 2;
@@ -14,14 +16,9 @@ int tempo = 100; //Tempo de delay
 
 void setup() {
   pinMode( 15, INPUT_PULLUP ); // fix Serial3
-  Serial.begin(9600);
-
-  pinMode(13, OUTPUT);
-
   digitalWrite(9, HIGH);
-
   Serial.println("Enter AT commands:");
-
+  Serial.begin(9600);
   Serial3.begin(9600);
   pinMode(ENA, OUTPUT);
   pinMode(ENB, OUTPUT);
@@ -31,11 +28,12 @@ void setup() {
   pinMode(IN4, OUTPUT);
   digitalWrite(ENA, HIGH);
   digitalWrite(ENB, HIGH);
-  Serial.begin(9600);
+
 }
 
 // Movimenta o carrinho para frente
 void paraFrente() {
+  Serial.println("Frente");
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, LOW);
@@ -66,7 +64,6 @@ void paraEsquerda() {
 
 // Movimenta o carrinho para direita
 void paraDireita() {
-
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, HIGH);
@@ -83,23 +80,32 @@ void parar() {
 }
 
 void loop() {
-
-String t = "";
+  String command = "";
+  String t = "";
   if (Serial3.available()) {
     t = (char)Serial3.read();
     delay(10);
     Serial.println(t);
     delay(10);
-  if (t.equals("F")) { //Iniciar
-    paraFrente();
-  } else if (t.equals( "T")) { //Desligar, parar o carro
-    paraTras();
-  } else if (t.equals("D")) { //Parar
-    paraDireita();
-  } else if (t.equals("E")) { //Frente
-    paraEsquerda();
-  } else if (t.equals("P")) { //Traz
+    if (t.equals("F")) { //Iniciar
+      paraFrente();
+    } else if (t.equals( "T")) { //Desligar, parar o carro
+      paraTras();
+    } else if (t.equals("D")) { //Parar
+      paraDireita();
+    } else if (t.equals("E")) { //Frente
+      paraEsquerda();
+    }
     parar();
   }
-} 
+  /*
+    Linha para configuração por comando AT.
+  */
+  //  if (Serial3.available()) {
+  //    Serial.write((char)Serial3.read());
+  //  }
+  //  if (Serial.available()) {
+  //    Serial3.write((char)Serial.read());
+  //  }
+
 }
