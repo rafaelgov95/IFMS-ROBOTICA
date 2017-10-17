@@ -78,7 +78,6 @@ void parar() {
 }
 
 void loop() {
-  String command = "";
   String t = "";
   if (Serial3.available()) {
     t = (char)Serial3.read();
