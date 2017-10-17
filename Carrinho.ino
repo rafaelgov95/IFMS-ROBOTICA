@@ -16,8 +16,6 @@ int tempo = 100; //Tempo de delay
 
 void setup() {
   pinMode( 15, INPUT_PULLUP ); // fix Serial3
-  digitalWrite(9, HIGH);
-  Serial.println("Enter AT commands:");
   Serial.begin(9600);
   Serial3.begin(9600);
   pinMode(ENA, OUTPUT);
