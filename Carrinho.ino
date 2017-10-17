@@ -1,7 +1,7 @@
 /*
-    Autor: Rafael Viana
-
-    Evento: Semana da Ciência e Tecnologia - IFMS 2017
+ *   Autor: Rafael Viana
+ *
+ *  Evento: Semana da Ciência e Tecnologia - IFMS 2017
 */
 
 int ENA = 2;
