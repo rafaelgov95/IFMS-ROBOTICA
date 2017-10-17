@@ -5,11 +5,11 @@
 */
 
 int ENA = 2;
-int IN1 = 4; // Gira as rodas da direita para traz
-int IN2 = 5; // Gira as rodas da direita para frente
+int IN1 = 4; 
+int IN2 = 5; 
 int ENB = 3;
-int IN3 = 6; // Gira as rodas da esquerda para traz
-int IN4 = 7; // Gira as rodas da esquerda para frente
+int IN3 = 6;
+int IN4 = 7; 
 int tempo = 100; //Tempo de delay
 
 // Inicializa os componentes do carrinho
@@ -57,7 +57,7 @@ void paraEsquerda() {
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
-  delay(tempo);
+  delay(tempo/2);
 
 
 }
@@ -68,7 +68,7 @@ void paraDireita() {
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
-  delay(tempo);
+  delay(tempo/2);
 }
 
 // Para o carrinho
@@ -87,16 +87,16 @@ void loop() {
     delay(10);
     Serial.println(t);
     delay(10);
-    if (t.equals("F")) { //Iniciar
+    if (t.equals("F")) { //Frente
       paraFrente();
-    } else if (t.equals( "T")) { //Desligar, parar o carro
+    } else if (t.equals( "T")) { //Trás
       paraTras();
-    } else if (t.equals("D")) { //Parar
+    } else if (t.equals("D")) { //Direita
       paraDireita();
-    } else if (t.equals("E")) { //Frente
+    } else if (t.equals("E")) { //Esquerda
       paraEsquerda();
     }
-    parar();
+    parar();// Para o carrinho
   }
   /*
     Linha para configuração por comando AT.
