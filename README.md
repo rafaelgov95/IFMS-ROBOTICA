@@ -1,10 +1,10 @@
 # MINICURSO DE ROBÓTICA COM ARDUINO
 ## SEMANA DE CIÊNCIAS E TECNOLOGIA 2017
-### Rafael Viana
+### Autor: Rafael Viana
 
+#### RESUMO
 
-
-
+O minicurso tem como objetivo, apresentar a placa de prototipagem arduino, e realizar a construção de um carrinho controlado via bluetooth.
 
 #### EXTRAS
 ##### Comandos AT-Bluetooth
