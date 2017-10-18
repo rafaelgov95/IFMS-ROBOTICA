@@ -4,12 +4,12 @@
  *   Evento: Semana da Ciência e Tecnologia - IFMS 2017
 */
 
-int ENA = 2;
-int IN1 = 4; 
-int IN2 = 5; 
-int ENB = 3;
-int IN3 = 6;
-int IN4 = 7; 
+int ENA = 53;
+int IN1 = 51; 
+int IN2 = 49; 
+int ENB = 31;
+int IN3 = 33;
+int IN4 = 35; 
 int tempo = 100; //Tempo de delay
 
 // Inicializa os componentes do carrinho
